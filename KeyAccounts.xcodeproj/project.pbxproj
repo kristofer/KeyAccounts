@@ -16,6 +16,9 @@
 		5CC5284C2AD1ADF7002A30C9 /* KeyAccountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5284B2AD1ADF7002A30C9 /* KeyAccountsTests.swift */; };
 		5CC528562AD1ADF7002A30C9 /* KeyAccountsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC528552AD1ADF7002A30C9 /* KeyAccountsUITests.swift */; };
 		5CC528582AD1ADF7002A30C9 /* KeyAccountsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC528572AD1ADF7002A30C9 /* KeyAccountsUITestsLaunchTests.swift */; };
+		5CC528652AD1AF39002A30C9 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC528642AD1AF39002A30C9 /* AccountList.swift */; };
+		5CC528672AD1B07A002A30C9 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC528662AD1B07A002A30C9 /* AccountRow.swift */; };
+		5CC528692AD1B10A002A30C9 /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC528682AD1B10A002A30C9 /* AccountDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		5CC528512AD1ADF7002A30C9 /* KeyAccountsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyAccountsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC528552AD1ADF7002A30C9 /* KeyAccountsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyAccountsUITests.swift; sourceTree = "<group>"; };
 		5CC528572AD1ADF7002A30C9 /* KeyAccountsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyAccountsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5CC528642AD1AF39002A30C9 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
+		5CC528662AD1B07A002A30C9 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
+		5CC528682AD1B10A002A30C9 /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				5CC528342AD1ADF6002A30C9 /* KeyAccountsApp.swift */,
+				5CC528642AD1AF39002A30C9 /* AccountList.swift */,
+				5CC528682AD1B10A002A30C9 /* AccountDetail.swift */,
+				5CC528662AD1B07A002A30C9 /* AccountRow.swift */,
 				5CC528362AD1ADF6002A30C9 /* ContentView.swift */,
 				5CC528382AD1ADF7002A30C9 /* Assets.xcassets */,
 				5CC5283D2AD1ADF7002A30C9 /* Persistence.swift */,
@@ -265,6 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC528672AD1B07A002A30C9 /* AccountRow.swift in Sources */,
+				5CC528652AD1AF39002A30C9 /* AccountList.swift in Sources */,
+				5CC528692AD1B10A002A30C9 /* AccountDetail.swift in Sources */,
 				5CC5283E2AD1ADF7002A30C9 /* Persistence.swift in Sources */,
 				5CC528412AD1ADF7002A30C9 /* KeyAccounts.xcdatamodeld in Sources */,
 				5CC528372AD1ADF6002A30C9 /* ContentView.swift in Sources */,
