@@ -8,12 +8,36 @@
 import SwiftUI
 
 struct AccountDetail: View {
-    @Binding var item: Item
     
+    @StateObject var item: Item
+    
+    @Environment(\.managedObjectContext) private var viewContext
+
     var body: some View {
         VStack{
-            Text(item.timestamp!, formatter: timestampFormatter)
-            TextField("Account name", text: $item.title)
+            Form {
+                Text(item.timestamp!, formatter: timestampFormatter)
+                TextField("Account name", text: $item.title.toUnwrapped(defaultValue: "untitled"))
+                TextField("Account", text: $item.account.toUnwrapped(defaultValue: "untitled"))
+                TextField("Password", text: $item.secret.toUnwrapped(defaultValue: "untitled"))
+                LabeledContent {
+                    TextField("Location", text: $item.location.toUnwrapped(defaultValue: "nowhere"))
+                } label: {
+                  Text("Location")
+                }
+
+            }
+            .onSubmit {
+                if viewContext.hasChanges {
+                    do {
+                        try viewContext.save()
+                        print("saved...")
+                    } catch {
+                        let nserror = error as NSError
+                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
+                }
+            }
         }
     }
 }

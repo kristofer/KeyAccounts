@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+extension Binding {
+     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+        Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
+    }
+    
+    init(_ source: Binding<Value?>, _ defaultValue: Value) {
+            // Ensure a non-nil value in `source`.
+            if source.wrappedValue == nil {
+                source.wrappedValue = defaultValue
+            }
+            // Unsafe unwrap because *we* know it's non-nil now.
+            self.init(source)!
+    }
+}
+
+
 struct AccountList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -18,11 +34,11 @@ struct AccountList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach($items) { $item in
+                ForEach(items) { item in
                     NavigationLink {
-                        AccountRow(item: item)
+                        AccountDetail(item: item )
                     } label: {
-                        AccountDetail(item: $item)
+                        AccountRow(item: item)
                     }
                 }
                 .onDelete(perform: deleteItems)
